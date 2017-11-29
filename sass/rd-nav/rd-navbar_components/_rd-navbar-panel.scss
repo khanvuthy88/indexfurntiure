@@ -1,0 +1,55 @@
+/*
+* @subsection   RD Navbar Toggles
+*
+* @description  Describes style declarations for RD Navbar panel
+*/
+
+.rd-navbar-static{
+  .rd-navbar-panel{
+    @include clearfix;
+    padding: 50px 0;
+  }
+}
+
+.rd-navbar-fixed{
+  .rd-navbar-panel-canvas{
+    position: fixed;
+    height: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: #282828;
+    z-index: 9999;
+  }
+
+  .rd-navbar-toggle{
+    position: absolute;
+    z-index: 17;
+    top: 13px;
+    left: 11px;
+    font-size: 16px;
+    color: #fff;
+    width: 32px;
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    &:hover {
+      color: #fe9b4b;
+    }
+    .fa-times {
+      display: none;
+    }
+    .fa-bars {
+      display: block;
+    }
+    &.active {
+      color: #fe9b4b;
+      .fa-times {
+        display: block;
+      }
+      .fa-bars {
+        display: none;
+      }
+    }
+  }
+}

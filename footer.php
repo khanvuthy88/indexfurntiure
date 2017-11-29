@@ -10,11 +10,11 @@
  */
 
 ?>
-
+		</div><!--.row-->
 	</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
+	<footer id="colophon" class="site-footer page-footer">
+		<div class="site-info well-xs text-center">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'indexfurniture' ) ); ?>"><?php
 				/* translators: %s: CMS name, i.e. WordPress. */
 				printf( esc_html__( 'Proudly powered by %s', 'indexfurniture' ), 'WordPress' );

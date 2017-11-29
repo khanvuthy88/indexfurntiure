@@ -22,35 +22,81 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'indexfurniture' ); ?></a>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php
-			endif;
 
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php
-			endif; ?>
-		</div><!-- .site-branding -->
+	<!--========================================================
+                              HEADER
+    =========================================================-->
+    <header id="home"  class="page-header text-center" data-type="anchor">
+        <!-- RD Navbar -->
+        <div class="rd-navbar-wrap">
+            <nav data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-layout="rd-navbar-static" data-lg-device-layout="rd-navbar-static" data-sm-stick-up-offset="50px" data-lg-stick-up-offset="150px" class="rd-navbar">
+                <div class="rd-navbar-inner">
+                    <!-- RD Navbar Panel -->
+                    <div class="rd-navbar-panel">
+                        <div class="rd-navbar-panel-canvas"></div>
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'indexfurniture' ); ?></button>
-			<?php
-				wp_nav_menu( array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				) );
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+                        <!-- RD Navbar Toggle -->
+                        <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                        <!-- END RD Navbar Toggle -->
 
-	<div id="content" class="site-content">
+                        
+
+                        
+
+                        <!-- RD Navbar Brand -->
+                        <div class="rd-navbar-brand">
+                            <img src="images/favicon.png" alt="" class="brand">
+                            <a href="<?php bloginfo('home'); ?>" class="brand-name">
+                                <span>RD</span> Navbar
+                            </a>
+                        </div>
+                        <!-- END RD Navbar Brand -->
+                    </div>
+                    <!-- END RD Navbar Panel -->
+                </div>
+                <div class="rd-navbar-outer">
+                    <div class="rd-navbar-inner">
+
+
+                        <div class="rd-navbar-subpanel">
+                            <div class="rd-navbar-nav-wrap">
+                                <!-- RD Navbar Nav -->
+                                <?php
+									wp_nav_menu( array(
+										'theme_location' => 'menu-1',
+										'menu_class'        => 'rd-navbar-nav',
+										'container'		 => false
+									) );
+								?>
+                               
+                                <!-- END RD Navbar Nav -->
+                            </div>
+
+                            <!-- RD Navbar Search Toggle -->
+                            <div class="rd-navbar-search-wrap">
+                                <button class="rd-navbar-search-toggle" data-rd-navbar-toggle=".rd-navbar-search, .rd-navbar, .rd-navbar-inner">
+                                    <span></span>
+                                </button>
+                                <div class="rd-navbar-search">
+                                    <form action="<?php echo home_url( '/' ); ?>" method="get">
+                                        <div class="form-group">
+                                            <input id="rd-navbar-search-input" type="text" class="form-control"
+                                                   placeholder="Search" name="s" id="search" value="<?php the_search_query(); ?>">
+                                        </div>
+                                        <button type="submit" class="material-icons-search"></button>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- END RD Navbar Search Toggle -->
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- END RD Navbar -->
+    </header>
+
+
+	<div id="content" class="container site-content">
+		<div class="row">

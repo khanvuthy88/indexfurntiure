@@ -1,0 +1,152 @@
+/*
+* @subsection   RD Navbar
+*
+* @description  Describes style declarations for RD Navbar extension
+*
+* @author       Evgeniy Gusarov
+* @link         https://ua.linkedin.com/pub/evgeniy-gusarov/8a/a40/54a
+* @version      2.0.0
+*/
+
+@import "_variables.scss";
+@import "includes/_mixins.scss";
+
+@import "includes/_tm-grid.scss";
+
+
+$rd-navbar-default-color: #888;
+$rd-navbar-contrast-color: #333;
+$rd-navbar-accent-color: #f44336;
+$rd-navbar-accent-color-2: rgb(46, 204, 113);
+$rd-navbar-white-color: #fff;
+
+$rd-navbar-shadow-ambient: 0 0 2px 0 rgba(#000, .25);
+$rd-navbar-shadow-medium: 0 3px 5px 0 rgba(#000, .25);
+$rd-navbar-shadow-large: 0 5px 8px 0 rgba(#000, .25);
+
+
+%rd-navbar-transition {
+	transition: .3s all cubic-bezier(0.785, 0.135, 0.150, 0.860);
+}
+
+%rd-navbar-hidden {
+	display: none;
+}
+
+%rd-navbar-visible {
+	display: block;
+}
+
+.rd-navbar--no-transition { 
+
+	&, * {
+		transition: none !important;
+	}
+
+}
+
+.rd-navbar-wrap {
+	@extend %rd-navbar-transition;
+}
+.rd-navbar-wrap {
+  display: inline-block;
+}
+
+.rd-navbar, .rd-navbar.rd-navbar--is-clone {
+	@extend %rd-navbar-hidden;
+}
+
+.rd-navbar-fixed,
+.rd-navbar-static,
+.rd-navbar-fullwidth,
+.rd-navbar-sidebar {
+	@extend %rd-navbar-visible;
+}
+
+.rd-navbar-fixed-linked {
+	padding-top: 60px;
+}
+
+.rd-navbar-outer {
+	color: $rd-navbar-default-color;
+	background: none;
+}
+
+.rd-navbar-static {
+
+
+  & {
+		background: $rd-navbar-white-color;
+	}
+
+	.rd-navbar--has-dropdown{
+		position: relative;
+	}
+
+	.rd-navbar-nav > li > .rd-navbar-dropdown .rd-navbar-dropdown {
+	    left: 100%;
+	    top: 0;
+	    z-index: 2;
+	    position: absolute;
+	    width: $navbar-dropdown-width;
+	    background:$dropdown-bg;
+	  	padding: 20px 0;
+	}
+
+	.rd-navbar-nav-wrap,
+	.rd-navbar-search-wrap {
+		//display: table-cell;
+		vertical-align: middle;
+	}
+
+	.rd-navbar-nav-wrap {
+		width: 100%;
+	}
+
+
+  /*asd sdf */
+
+	&.rd-navbar--is-clone {
+
+		& {
+			@extend %rd-navbar-transition;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			display: block;
+			@include transform(translateY(-105%));
+			z-index: 20;
+		  	padding: 20px 0;
+			-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.35) ;
+			-moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.35) ;
+			box-shadow: 0 0 5px rgba(0, 0, 0, 0.35) ;
+		}
+
+		.rd-navbar-panel {
+			display: none;
+		}
+
+		&.rd-navbar--is-stuck {
+			@include transform(translateY(0));
+		}
+
+	}
+
+	&.rd-navbar--is-stuck {
+		position: fixed;
+		left: 0;
+		top: 0;
+		right: 0;
+		z-index: 9999;
+
+		.rd-navbar-panel {
+			display: none;
+		}
+		
+	}
+}
+
+@import "rd-navbar_components/_rd-navbar-toggles.scss";
+@import "rd-navbar_components/_rd-navbar-nav.scss";
+@import "rd-navbar_components/_rd-navbar-panel.scss";

@@ -112,7 +112,7 @@ h2, .heading-2 {
   line-height: 1.5;
 
   @media (min-width: $screen-sm-min) {
-    font-size: 56px;
+    font-size: 24px;
   }
 }
 
@@ -682,6 +682,30 @@ html body .page { // Increases specificity to use with background helpers
 
 .copyright {
 }
-.video-stack{
-  width: 100%;
+
+
+.rd-navbar-static{
+  .rd-navbar-panel{
+    padding:23px 0 !important; 
+  }
+  .rd-navbar-nav{
+    li {
+      .sub-menu{
+        margin-top:0px !important;
+        margin-left:-30px !important;
+      }
+    }
+  }
+  .sub-menu{
+    border-top:1px solid #fff;
+  }
+  .rd-navbar-megamenu{
+    border-top:1px solid #fff;
+  }
+}
+
+.rd-navbar-fixed{
+  .rd-navbar-search-toggle{
+    right: 10px !important;
+  }
 }
