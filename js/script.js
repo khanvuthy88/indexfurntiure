@@ -4,7 +4,7 @@
  * @param         {string} scriptUrl
  */
 function include(scriptUrl) {
-    document.write('<script src="http://indexfurniture.dev/wp-content/themes/indexfurntiure/' + scriptUrl + '"></script>');
+    document.write('<script src="http://indexfurniture.dev/wp-content/themes/indexfurniture/' + scriptUrl + '"></script>');
 }
 
 
@@ -298,4 +298,13 @@ function isIE() {
             });
         });
     }
+})(jQuery);
+
+
+(function ($){
+    $(document).ready(function(){
+        if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+         $('#main').removeClass('row');
+        }
+    });
 })(jQuery);

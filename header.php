@@ -46,8 +46,8 @@
 
                         <!-- RD Navbar Brand -->
                         <div class="rd-navbar-brand">
-                            <img src="images/favicon.png" alt="" class="brand">
-                            <a href="<?php bloginfo('home'); ?>" class="brand-name">
+                            <img src="<?php  echo get_template_directory_uri ().'/images/favicon.png'; ?>" alt="" class="brand">
+                            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="brand-name">
                                 <span>RD</span> Navbar
                             </a>
                         </div>
@@ -98,5 +98,4 @@
     </header>
 
 
-	<div id="content" class="container site-content">
-		<div class="row">
+	<div id="content" class="site-content">

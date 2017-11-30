@@ -683,7 +683,6 @@ html body .page { // Increases specificity to use with background helpers
 .copyright {
 }
 
-
 .rd-navbar-static{
   .rd-navbar-panel{
     padding:23px 0 !important; 
@@ -692,7 +691,8 @@ html body .page { // Increases specificity to use with background helpers
     li {
       .sub-menu{
         margin-top:0px !important;
-        margin-left:-30px !important;
+        margin-left:0px !important;
+        left:0px !important;
       }
     }
   }
@@ -708,4 +708,9 @@ html body .page { // Increases specificity to use with background helpers
   .rd-navbar-search-toggle{
     right: 10px !important;
   }
+}
+
+#home_slider{
+  width:100%;
+  padding:10px 0px;
 }

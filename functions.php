@@ -41,6 +41,21 @@ if ( ! function_exists( 'indexfurniture_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
+		add_image_size('featured', 292, 400, true); //featured area
+		add_image_size('featured1', 400, 250, true); //latest post thumb
+		add_image_size('featured2', 240, 150, true); //latest post thumb medium
+		add_image_size('featured3', 160, 100, true); //latest post thumb small
+		add_image_size('featuredfull', 830, 450, true); //single post thumb
+		add_image_size('related', 160, 100, true); //related
+		add_image_size('widgetthumb', 100, 62, true); //widget
+		add_image_size('widgetfull', 300, 200, true); //widget full
+		add_image_size('slider', 234, 146, true); //footer carousel
+
+		add_action( 'init', 'indexfurniture_wp_review_thumb_size', 11 );
+		function indexfurniture_wp_review_thumb_size() {
+			add_image_size( 'wp_review_large', 300, 200, true );
+			add_image_size( 'wp_review_small', 100, 62, true );
+		}
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
